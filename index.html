@@ -59,10 +59,8 @@
     <section class="container">
         <h1>Array.prototype.slice()</h1>
         <p>
-            মেথড একটি অ্যারে থেকে নির্দিষ্ট একটি অংশকে রিটার্ন করে থাকে। তবে মেইন অ্যারেকে পরিবর্তন করে না।
-            সিনট্যাক্সটঃ
-            arr.slice([start[, end]]);=
-            Example:
+            মেথড একটি অ্যারে থেকে নির্দিষ্ট একটি অংশকে রিটার্ন করে থাকে। তবে মেইন অ্যারেকে পরিবর্তন করে না। <br>
+            <strong>সিনট্যাক্সটঃ arr.slice([start[, end]]);</strong>
         <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
                 <code class="text-white">
                     var arr=[1,2,3,4,5,6,7,8,9];
@@ -99,6 +97,56 @@
                     <span class="text-secondary ">
                         // [1,2,3,4,5,6,7,8,9]
                         // [7,8,9] </span>
+                </code>             
+            </pre>
+            arr.slice(-3) দ্বারা বুঝায় অ্যারে এর শেষ থেকে 3 টি এলিমেন্টকে slice মেথড রিটার্ন করবে। তাই আউটপুট এ [7,8,9] এসেছে। আর যদি আমরা starting দিয়ে ending নেগেটিভ দেই তাহলে
+            <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+                <code class="text-white">
+                    var arr=[1,2,3,4,5,6,7,8,9];
+                    var newArr=arr.slice(2,-3);
+                    console.log(arr);
+                    console.log(newArr);
+                    <span class="text-secondary ">
+                        // [1,2,3,4,5,6,7,8,9]
+                        // [3,4,5,6] </span>
+                </code>             
+            </pre>
+            arr.slice(2,-3) এখানে 2 হচ্ছে starting আর -3 মানে শেষ থেকে 3 টি এলিমেন্টকে বাদ দিয়ে বাকিগুলোকে রিটার্ন করবে। <br>
+            <b>নোটঃ</b> 1. slice মেথডের মধ্যে যদি কোনো stating বা ending কিছুই না দেই তাহলে slice মেথড পুরো অ্যারেকে রিটার্ন করবে। 
+
+            <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+                <code class="text-white">
+                    var arr=[1,2,3,4,5,6,7,8,9];
+                    var newArr=arr.slice();
+                    console.log(arr);
+                    console.log(newArr);
+                    <span class="text-secondary ">
+                        // [1,2,3,4,5,6,7,8,9]
+                        // [1,2,3,4,5,6,7,8,9] </span>
+                </code>             
+            </pre>
+            <b>নোটঃ</b> 2. starting যদি অ্যারে সাইজ থেকে বড় হয় তাহলে slice মেথড একটি এম্পটি অ্যারে রিটার্ন করবে। 
+            <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+                <code class="text-white">
+                    var arr=[1,2,3,4,5,6,7,8,9];
+                    var newArr=arr.slice(12,6);
+                    console.log(arr);
+                    console.log(newArr);
+                    <span class="text-secondary ">
+                        // [1,2,3,4,5,6,7,8,9]
+                        // [] </span>
+                </code>             
+            </pre>
+            <b>নোটঃ</b> 3. শুধু যদি ending অ্যারে সাইজ থেকে বড় হয় তাহলে starting ইনডেক্স থেকে শেষ ইনডেক্স পর্যন্ত সবগুলো এলিমেন্টকে রিটার্ন করবে।
+            <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+                <code class="text-white">
+                    var arr=[1,2,3,4,5,6,7,8,9];
+                    var newArr=arr.slice(3,15);
+                    console.log(arr);
+                    console.log(newArr);
+                    <span class="text-secondary ">
+                        // [1,2,3,4,5,6,7,8,9]
+                        // [3,4,5,6,7,8,9] </span>
                 </code>             
             </pre>
 

@@ -1,9 +1,10 @@
 body{
     font-size: 18px;
+    background-color:rgba(239, 241, 241, 0.986) ;
 }
 .nav-bg{
-    background-color: rgb(53, 33, 30);
-    margin-bottom: 60px;
+    background-color: rgb(46, 34, 32);
+    margin-bottom: 80px;
 }
 pre{
     border-radius:6px;
