@@ -1,0 +1,10 @@
+body{
+    font-size: 18px;
+}
+.nav-bg{
+    background-color: rgb(53, 33, 30);
+    margin-bottom: 60px;
+}
+pre{
+    border-radius:6px;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="nav-bg">
+
+        <nav class="navbar fixed-top nav-bg navbar-expand-lg navbar-light ">
+            <div class="container-fluid ">
+                <a class="navbar-brand text-white" href="#">JoniBlog.com</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item " href="#">Action</a></li>
+                                <li><a class="dropdown-item " href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item " href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success text-white" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="container">
+        <h1>Array.prototype.slice()</h1>
+        <p>
+            মেথড একটি অ্যারে থেকে নির্দিষ্ট একটি অংশকে রিটার্ন করে থাকে। তবে মেইন অ্যারেকে পরিবর্তন করে না।
+            সিনট্যাক্সটঃ
+            arr.slice([start[, end]]);=
+            Example:
+        <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+                <code class="text-white">
+                    var arr=[1,2,3,4,5,6,7,8,9];
+                    var newArr=arr.slice(3);
+                    console.log(arr);
+                    console.log(newArr);
+                    <span class="text-secondary ">
+                        // [1,2,3,4,5,6,7,8,9]
+                        // [4,5,6,7,8,9] </span>
+                </code>             
+            </pre>
+            আমরা এখানে শুধু starting পয়েন্ট বলে দিয়েছি। কোথায় গিয়ে slice করা শেষ হবে তা বলি নি। তাই slice মেথড 3 নাম্বার ইনডেক্স থেকে শুরু করে শেষ ইনডেক্স পর্যন্ত সব কিছু newArr ভ্যারিয়েবলের মধ্যে রিটার্ন করে দিয়েছে। 
+
+            নিচের উদাহরনটি ভালো করে খেয়াল করি। 
+            <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+                <code class="text-white">
+                    var arr=[1,2,3,4,5,6,7,8,9];
+                    var newArr=arr.slice(3,6);
+                    console.log(arr);
+                    console.log(newArr);
+                    <span class="text-secondary ">
+                        // [1,2,3,4,5,6,7,8,9]
+                        // [4,5,6] </span>
+                </code>             
+            </pre>
+            arr.slice(3,6) এখানে 3 দ্বারা বোঝানো হয়েছে ইনডেক্স নাম্বার। অর্থাৎ 3 নাম্বার ইনডেক্স থেকে slice করা শুরু হবে এবং 6 দ্বারা বোঝানো হয়েছে 6th নাম্বার এলিমেন্টে শেষ হবে। প্রথম ইনডেক্সকে 1 থেকে গণ্না করা হলে 6 হচ্ছে 6th এলিমেন্টে। <br>
+            নেগেটিভ ভ্যালু ব্যবহার করেও আমরা অ্যারে slice করতে পারি। নিচের উদাহরনটি ভালো করে খেয়াল করি। 
+            <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+                <code class="text-white">
+                    var arr=[1,2,3,4,5,6,7,8,9];
+                    var newArr=arr.slice(-3);
+                    console.log(arr);
+                    console.log(newArr);
+                    <span class="text-secondary ">
+                        // [1,2,3,4,5,6,7,8,9]
+                        // [7,8,9] </span>
+                </code>             
+            </pre>
+
+
+        </p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
