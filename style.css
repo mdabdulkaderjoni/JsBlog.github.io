@@ -16,3 +16,14 @@ pre{
 code{
     padding: 10px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  code{
+    padding: 5px;
+    font-size
+  }
+  pre{
+	font-size:16px;
+  }
+}
