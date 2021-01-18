@@ -16,3 +16,11 @@ img{
   height: 250px;
   border-radius: 6px;
 }
+
+
+pre{
+    border-radius:6px;
+}
+code{
+    padding: 10px;
+}

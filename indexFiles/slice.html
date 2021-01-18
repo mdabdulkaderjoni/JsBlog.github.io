@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/subStyle/array/indexOf.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -56,97 +56,99 @@
             </div>
         </nav>
     </header>
-
     <section class="container">
-        <h1>Array.prototype.indexOf()</h1>
-        
-        <p>indexOf() মেথড একটি অ্যারেতে কোনো একটি এলিমেন্ট কত নাম্বার ইনডেক্সে রয়েছে সেটি রিটার্ন করে থাকে। তবে মেইন অ্যারেকে পরিবর্তন করে না। <br>
-            <strong>সিনট্যাক্সটঃ arr.indexOf(searchElement[, fromIndex])</strong> <br> <br>
-            যদি কোনো স্ট্রিং এর ইনডেক্স বের করতে তাহলে এভাবে লেখতে হবেঃ
+        <h1>Array.prototype.slice()</h1>
+        <p>
+            মেথড একটি অ্যারে থেকে নির্দিষ্ট একটি অংশকে রিটার্ন করে থাকে। তবে মেইন অ্যারেকে পরিবর্তন করে না। <br>
+            <strong>সিনট্যাক্সটঃ arr.slice([start[, end]]);</strong>
 <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3 ">
 <code class="text-white">
-var arr=['A','B','C','D','E','F','G','H','I'];
-var indexArr=arr.indexOf('D');
-console.log(indexArr);
+var arr=[1,2,3,4,5,6,7,8,9];
+var newArr=arr.slice(3);
+console.log(arr);
+console.log(newArr);
 <span class="text-secondary ">
-// 3 </span>
+// [1,2,3,4,5,6,7,8,9]
+// [4,5,6,7,8,9] </span>
 </code></pre>
-           
-            আর যদি কোনো নাম্বারের ইনডেক্স বের করতে চাই তাহলে এভাবে লেখতে হবেঃ
-<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
-<code class="text-white">
-var arr=[11,22,33,44,55,66,77,88,99];
-var indexArr=arr.indexOf(44);
-console.log(indexArr);
-<span class="text-secondary ">
-// 3 </span>
-</code>             
-            </pre>
-            যদি এমন হয় যে একই এলিমেন্ট অ্যারেতে একাধিকবার আছে তাহলে indexOf মেথড সবার প্রথমে যেই এলিমেন্ট পাবে তার ইনডেক্স নাম্বার রিটার্ন করবে। 
-<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
-<code class="text-white">
-var arr=[11,22,100,44,55,100,77,88,100];
-var indexArr=arr.indexOf(100);
-console.log(indexArr);
-<span class="text-secondary ">
-// 2 </span>
-</code>             
-            </pre>
-            উপরে যেই উদাহরনগুলো দেখানো হয়েছে সেই ক্ষেত্রে By defalut indexOf মেথড 0 নাম্বার ইনডেক্স থেকে এলিমেন্টকে সার্চ করা শুরু করে। কিন্তু আমরা চাইলে indexOf মেথডকে বলে দিতে পারি যে সে কত নাম্বার ইনডেক্স থেকে সার্চ করবে।  
-<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
-<code class="text-white">
-var arr=['C','B','C','D','E','C','F','G'];
-var newArr=arr.indexOf('C',3);
-console.log(newArr);
-<span class="text-secondary ">
-// 5</span>
-</code>             
-            </pre>
-            এখানে আমরা সার্চ ইনডেক্স 3 দিয়ে বুঝিয়েছি 3 নাম্বার ইনডেক্স থেকে সার্চ শুরু হবে। কিন্তু যেখান থেকে সার্চ করা শুরু হবে তাকে আবার 0 ইনডেক্স ধরা হবে না। অ্যারে এর প্রথম এলিমেন্টকেই 0 ইনডেক্স হিসেবে ধরে গণনা করতে হবে। সেই ক্ষেত্রে 'D' থেকে সার্চ শুরু হয়ে 'C' 5 নাম্বার ইনডেক্সে রয়েছে। বরং 2 নাম্বার ইনডেক্সে নয়। <br> <br>
+            আমরা এখানে শুধু starting পয়েন্ট বলে দিয়েছি। কোথায় গিয়ে slice করা শেষ হবে তা বলি নি। তাই slice মেথড 3 নাম্বার ইনডেক্স থেকে শুরু করে শেষ ইনডেক্স পর্যন্ত সব কিছু newArr ভ্যারিয়েবলের মধ্যে রিটার্ন করে দিয়েছে। 
 
-            <b>নোটঃ</b> 1. indexOf মেথডের মধ্যে যদি কোনো searchFromIndex  না দেই তাহলে indexOf মেথড 0 নাম্বার ইনডেক্স থেকে সার্চ করবে।
-
-<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
-<code class="text-white">
-var arr=[11,22,33,44,55,66,77,88,99];
-var indexArr=arr.indexOf(44);
-console.log(indexArr);
-<span class="text-secondary ">
-// 3 </span>
-</code> 
-</pre>
-
-            <b>নোটঃ</b> 2. searchFromIndex যদি অ্যারে সাইজ থেকে বড় হয় বা arr.length এর সমান হয় indexOf  মেথড -1 রিটার্ন করবে। 
+            নিচের উদাহরনটি ভালো করে খেয়াল করি। 
 <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
 <code class="text-white">
 var arr=[1,2,3,4,5,6,7,8,9];
-var newArr=arr.indexOf(3,12);
+var newArr=arr.slice(3,6);
+console.log(arr);
 console.log(newArr);
 <span class="text-secondary ">
-// -1</span>
+// [1,2,3,4,5,6,7,8,9]
+// [4,5,6] </span>
 </code>             
             </pre>
-            <b>নোটঃ</b> 3. searchFromIndex যদি নেগেটিভ ইনডেক্স হয় তাহলেও indexOf  মেথড -1 রিটার্ন করবে।
+            arr.slice(3,6) এখানে 3 দ্বারা বোঝানো হয়েছে ইনডেক্স নাম্বার। অর্থাৎ 3 নাম্বার ইনডেক্স থেকে slice করা শুরু হবে এবং 6 দ্বারা বোঝানো হয়েছে 6th নাম্বার এলিমেন্টে শেষ হবে। প্রথম ইনডেক্সকে 1 থেকে গণ্না করা হলে 6 হচ্ছে 6th এলিমেন্টে। <br>
+            নেগেটিভ ভ্যালু ব্যবহার করেও আমরা অ্যারে slice করতে পারি। নিচের উদাহরনটি ভালো করে খেয়াল করি। 
 <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
 <code class="text-white">
 var arr=[1,2,3,4,5,6,7,8,9];
-var newArr=arr.indexOf(5,-2);
+var newArr=arr.slice(-3);
+console.log(arr);
 console.log(newArr);
 <span class="text-secondary ">
-// -1</span>
+// [1,2,3,4,5,6,7,8,9]
+// [7,8,9] </span>
+</code>             
+            </pre>
+            arr.slice(-3) দ্বারা বুঝায় অ্যারে এর শেষ থেকে 3 টি এলিমেন্টকে slice মেথড রিটার্ন করবে। তাই আউটপুট এ [7,8,9] এসেছে। আর যদি আমরা starting দিয়ে ending নেগেটিভ দেই তাহলে
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">
+var arr=[1,2,3,4,5,6,7,8,9];
+var newArr=arr.slice(2,-3);
+console.log(arr);
+console.log(newArr);
+<span class="text-secondary ">
+// [1,2,3,4,5,6,7,8,9]
+// [3,4,5,6] </span>
+</code>             
+            </pre>
+            arr.slice(2,-3) এখানে 2 হচ্ছে starting আর -3 মানে শেষ থেকে 3 টি এলিমেন্টকে বাদ দিয়ে বাকিগুলোকে রিটার্ন করবে। <br>
+            <b>নোটঃ</b> 1. slice মেথডের মধ্যে যদি কোনো stating বা ending কিছুই না দেই তাহলে slice মেথড পুরো অ্যারেকে রিটার্ন করবে। 
+
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">
+var arr=[1,2,3,4,5,6,7,8,9];
+var newArr=arr.slice();
+console.log(arr);
+console.log(newArr);
+<span class="text-secondary ">
+// [1,2,3,4,5,6,7,8,9]
+// [1,2,3,4,5,6,7,8,9] </span>
+</code>             
+            </pre>
+            <b>নোটঃ</b> 2. starting যদি অ্যারে সাইজ থেকে বড় হয় বা arr.length এর সমান হয়  তাহলে slice মেথড একটি এম্পটি অ্যারে রিটার্ন করবে। 
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">
+var arr=[1,2,3,4,5,6,7,8,9];
+var newArr=arr.slice(12,6);
+console.log(arr);
+console.log(newArr);
+<span class="text-secondary ">
+// [1,2,3,4,5,6,7,8,9]
+// [] </span>
+</code>             
+            </pre>
+            <b>নোটঃ</b> 3. শুধু যদি ending অ্যারে সাইজ থেকে বড় হয় বা arr.length এর সমান হয় তাহলে starting ইনডেক্স থেকে শেষ ইনডেক্স পর্যন্ত সবগুলো এলিমেন্টকে রিটার্ন করবে।
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">
+var arr=[1,2,3,4,5,6,7,8,9];
+var newArr=arr.slice(3,15);
+console.log(arr);
+console.log(newArr);
+<span class="text-secondary ">
+// [1,2,3,4,5,6,7,8,9]
+// [3,4,5,6,7,8,9] </span>
 </code>             
 </pre>
 
-            <b>নোটঃ</b> 4. যেই এলিমেন্টকে সার্চ করা হয় সেটি যদি অ্যারেতে না থাকে  তাহলেও indexOf  মেথড -1 রিটার্ন করবে।
-<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
-<code class="text-white">
-var arr=[1,2,3,4,5,6,7,8,9];
-var newArr=arr.indexOf(25);
-console.log(newArr);
-<span class="text-secondary ">
-// -1</span>
-</code>             
-</pre>
 
         </p>
     </section>
