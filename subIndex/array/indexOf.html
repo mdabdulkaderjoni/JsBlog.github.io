@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/subStyle/array/indexOf.css">
+</head>
+
+<body>
+    <header class="nav-bg">
+
+        <nav class="navbar fixed-top nav-bg navbar-expand-lg navbar-light ">
+            <div class="container-fluid ">
+                <a class="navbar-brand text-white" href="#">JoniBlog.com</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item " href="#">Action</a></li>
+                                <li><a class="dropdown-item " href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item " href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success text-white" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h1>Array.prototype.indexOf()</h1>
+        
+        <p>indexOf() মেথড একটি অ্যারেতে কোনো একটি এলিমেন্ট কত নাম্বার ইনডেক্সে রয়েছে সেটি রিটার্ন করে থাকে। তবে মেইন অ্যারেকে পরিবর্তন করে না। <br>
+            <strong>সিনট্যাক্সটঃ arr.indexOf(searchElement[, fromIndex])</strong> <br> <br>
+            যদি কোনো স্ট্রিং এর ইনডেক্স বের করতে তাহলে এভাবে লেখতে হবেঃ
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3 ">
+<code class="text-white">
+var arr=['A','B','C','D','E','F','G','H','I'];
+var indexArr=arr.indexOf('D');
+console.log(indexArr);
+<span class="text-secondary ">
+// 3 </span>
+</code></pre>
+           
+            আর যদি কোনো নাম্বারের ইনডেক্স বের করতে চাই তাহলে এভাবে লেখতে হবেঃ
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">
+var arr=[11,22,33,44,55,66,77,88,99];
+var indexArr=arr.indexOf(44);
+console.log(indexArr);
+<span class="text-secondary ">
+// 3 </span>
+</code>             
+            </pre>
+            যদি এমন হয় যে একই এলিমেন্ট অ্যারেতে একাধিকবার আছে তাহলে indexOf মেথড সবার প্রথমে যেই এলিমেন্ট পাবে তার ইনডেক্স নাম্বার রিটার্ন করবে। 
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">
+var arr=[11,22,100,44,55,100,77,88,100];
+var indexArr=arr.indexOf(100);
+console.log(indexArr);
+<span class="text-secondary ">
+// 2 </span>
+</code>             
+            </pre>
+            উপরে যেই উদাহরনগুলো দেখানো হয়েছে সেই ক্ষেত্রে By defalut indexOf মেথড 0 নাম্বার ইনডেক্স থেকে এলিমেন্টকে সার্চ করা শুরু করে। কিন্তু আমরা চাইলে indexOf মেথডকে বলে দিতে পারি যে সে কত নাম্বার ইনডেক্স থেকে সার্চ করবে।  
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">
+var arr=['C','B','C','D','E','C','F','G'];
+var newArr=arr.indexOf('C',3);
+console.log(newArr);
+<span class="text-secondary ">
+// 5</span>
+</code>             
+            </pre>
+            এখানে আমরা সার্চ ইনডেক্স 3 দিয়ে বুঝিয়েছি 3 নাম্বার ইনডেক্স থেকে সার্চ শুরু হবে। কিন্তু যেখান থেকে সার্চ করা শুরু হবে তাকে আবার 0 ইনডেক্স ধরা হবে না। অ্যারে এর প্রথম এলিমেন্টকেই 0 ইনডেক্স হিসেবে ধরে গণনা করতে হবে। সেই ক্ষেত্রে 'D' থেকে সার্চ শুরু হয়ে 'C' 5 নাম্বার ইনডেক্সে রয়েছে। বরং 2 নাম্বার ইনডেক্সে নয়। <br> <br>
+
+            <b>নোটঃ</b> 1. indexOf মেথডের মধ্যে যদি কোনো searchFromIndex  না দেই তাহলে indexOf মেথড 0 নাম্বার ইনডেক্স থেকে সার্চ করবে।
+
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">
+var arr=[11,22,33,44,55,66,77,88,99];
+var indexArr=arr.indexOf(44);
+console.log(indexArr);
+<span class="text-secondary ">
+// 3 </span>
+</code> 
+</pre>
+
+            <b>নোটঃ</b> 2. searchFromIndex যদি অ্যারে সাইজ থেকে বড় হয় বা arr.length এর সমান হয় indexOf  মেথড -1 রিটার্ন করবে। 
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">
+var arr=[1,2,3,4,5,6,7,8,9];
+var newArr=arr.indexOf(3,12);
+console.log(newArr);
+<span class="text-secondary ">
+// -1</span>
+</code>             
+            </pre>
+            <b>নোটঃ</b> 3. searchFromIndex যদি নেগেটিভ ইনডেক্স হয় তাহলেও indexOf  মেথড -1 রিটার্ন করবে।
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">
+var arr=[1,2,3,4,5,6,7,8,9];
+var newArr=arr.indexOf(5,-2);
+console.log(newArr);
+<span class="text-secondary ">
+// -1</span>
+</code>             
+</pre>
+
+            <b>নোটঃ</b> 4. যেই এলিমেন্টকে সার্চ করা হয় সেটি যদি অ্যারেতে না থাকে  তাহলেও indexOf  মেথড -1 রিটার্ন করবে।
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">
+var arr=[1,2,3,4,5,6,7,8,9];
+var newArr=arr.indexOf(25);
+console.log(newArr);
+<span class="text-secondary ">
+// -1</span>
+</code>             
+</pre>
+
+        </p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
