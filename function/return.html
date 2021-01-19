@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/style.css"> 
+</head>
+
+<body>
+    <header class="nav-bg">
+
+        <nav class="navbar fixed-top nav-bg navbar-expand-lg navbar-light ">
+            <div class="container-fluid ">
+                <a class="navbar-brand text-white" href="#">JoniBlog.com</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item " href="#">Action</a></li>
+                                <li><a class="dropdown-item " href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item " href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success text-white" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="container">
+        <h1>return keyword</h1>
+        <p>
+            return কি-ওয়ার্ড সম্পর্কে প্রথম যেই জিনিসটি আমরা জানবো সেটি হচ্ছে return কি-ওয়ার্ড এর জন্য ফাংশন এক্সিকিউশন শেষ হয়। অর্থাৎ return কি-ওয়ার্ড এর পর আর যাই থাকুক না কেনো সেটা এক্সিকিউট হবে না। <br>
+            <strong>সিনট্যাক্সটঃ return [expression];</strong>
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3 ">
+<code class="text-white">function name(){
+    console.log('My name is: ')
+    return 'Joni';
+    console.log('I am a Student');
+};     
+console.log(name());      
+<span class="text-secondary ">// My name is:
+// Joni </span></code></pre>
+ফাংশন name() যখন কল হয়েছে তখন My name is: লাইনটি প্রিন্ট হয়েছে তারপর ফাংশনটি একটি স্ট্রিং তার caller কে (console.log(name())এখানে) return করেছে এবং সাথে সাথে return কি-ওয়ার্ড ফাংশন এক্সিকিউশন বন্ধ করে দিয়েছে তাই শেষে থাকা console.log('I am a Student'); এই লাইনটি এক্সিকিউট হয় নি।  return কি-ওয়ার্ড এর পর যা ই থাকুক না কেনো তা আর ফাংশন এক্সিকিউট করবে না। নিচের উদাহরনটি তার প্রমান।
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">function test(){
+    return true;
+    return false;
+    return 'How are you?';
+};
+test();
+<span class="text-secondary ">// true </span>
+</code></pre>
+<h4>ফাংশন কখন undefined রিটার্ন করবে?</h4>
+By default জাভাস্ক্রিপ্টে ফাংশন এর ভ্যালু undefined সেট করা থাকে। যদি ফাংশন এর মধ্যে কিছু না থাকে তাহলে undefined আসবে। নিচের উদাহরনটি খেয়াল করি। 
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">function test(){
+
+};
+test(); 
+<span class="text-secondary ">// undefined</span>
+</code></pre>
+<h4>return এর ভ্যালু কখন undefined আসবে?</h4>
+যদি return[expression] এর মধ্যে কিছু না থাকে তাহলে সেই ফাংশনটি console.log() করলে undefined আসবে। নিচের উদাহরনটি খেয়াল করি। 
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">function test(){
+    return;
+};
+console.log(test());
+<span class="text-secondary ">// undefined</span>
+</code> </pre>
+
+আর যদি ফাংশনটি console.log() না করে শুধু কল করি তাহলে কিছুই দেখাবে না যেহেতু ফাংশন কিছু রিটার্ন করছে না এবং ফাংশন এর মধ্যে কোনো console.log() নেই। 
+            
+
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">function test(){
+    return;
+};
+test();
+<span class="text-secondary ">// </span>
+</code> </pre>
+        return কি-ওয়ার্ড এর পর যদি আমরা লাইন ব্রেক দিয়ে পরের নাইনে এক্সপ্রেশন দেই তাহলে return কি-ওয়ার্ড সঠিকভাবে কাজ করবে না।  
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">function add(a,b){
+    return 
+    a+b;
+}
+console.log(add(10,20))
+<span class="text-secondary ">// undefined</span>
+</code></pre>
+            কিন্তু লাইন ব্রেক না দিলে ফাংশনটি 30 রিটার্ন করতো। 
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">function add(a,b){
+    return a+b;
+}
+console.log(add(10,20))
+<span class="text-secondary ">// 30</span></code></pre>
+
+এই সমস্যা সমাধানের একটি উপায় রয়েছে। তা হল প্যারেনথেসিস এর মধ্যে expression লেখা। 
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">function add(a,b){
+    return(
+        a+b
+    );
+};
+console.log(add(10,20))
+<span class="text-secondary ">// 30</span></code></pre>
+
+এবার আমরা নিচের কোডটিতে কি ঘটেছে নিজে নিজে বোঝার চেষ্টা করি।
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">function counter() {
+    for (var count = 1; ; count++) {  <span class="text-secondary ">// infinite loop </span>
+      console.log(count); <span class="text-secondary ">// until 5</span>
+        if (count === 5) {
+          return;
+        }
+        console.log('Javascript return keyword'); <span class="text-secondary ">// until 4 times</span>
+      }
+    console.log('I will not be executed because of return keyword');  <span class="text-secondary ">// never appears</span>
+    console.log('I will not be executed because of return keyword');  <span class="text-secondary ">// never appears</span>
+}
+counter();
+<span class="text-secondary ">
+1
+Javascript return keyword
+2
+Javascript return keyword
+3
+Javascript return keyword
+4
+Javascript return keyword
+5</span></code></pre>
+
+<h4>Returning Multiple Values from a Function</h4>
+আমাদের মনে প্রশ্ন আসতেই পারে যে একটা ফাংশন থেকে একাধিক ভ্যালুকি রিটার্ন করা যেতে পারে? এভাবে একবার চেষ্টা করে দেখি ফলাফল কি আসে। 
+
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">function calculate(a,b){
+    return (
+      a+b,
+      a-b,
+      a*b
+    );
+}
+var result=calculate(20,10);
+console.log(result)
+<span class="text-secondary ">// 200</span></code></pre>
+এক্ষেত্রে আমাদের সর্বশেষে যা থাকছে (a*b) শুধু তার রেজাল্ট রিটার্ন করছে। যদিও জাভাস্ক্রিপ্টে ফাংশন থেকে একাধিক ভ্যালু রিটার্ন করা যায় কিন্তু সেটি অন্য পন্থায়। <br>
+জাভাস্ক্রিপ্টে ফাংশন সবসময় একটি ভ্যালুই রিটার্ন করে থাকে যা আমরা উপরের কোনো একটি উদাহরনে দেখেছি যে একাধিক return কি-ওয়ার্ড থাকলেও লাভ নেই প্রথম return কি-ওয়ার্ডই কাজ করবে। তাহলে অন্য পন্থাটা কি? সেটি হলো আমরা যদি একাধিক ভ্যালু রিটার্ন করতে চাই তাহলে হয়তো ভ্যালুগুলোকে একটি অ্যারে আকারে নিয়ে নিতে হবে না হয় অবজেক্ট আকারে। <br> <br>
+<h5>অ্যারে আকারে একাধিক ভ্যালু রিটার্ন করা</h5>
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+<code class="text-white">function getNames() {
+
+    let firstName = 'John',
+        lastName = 'Doe';
+
+        <span class="text-secondary ">// return as an array</span>
+    return [firstName, lastName];
+}
+
+let names = getNames();
+console.log(names);
+console.log(names[0]);
+console.log(names[1]);
+
+<span class="text-secondary ">["John","Doe"]
+John
+Doe</span></code></pre>
+অ্যারে এর নিয়ম মেনে [] এটির মধ্যে expressions দিতে হবে। <br> <br>
+
+<h5>অবজেক্ট আকারে একাধিক ভ্যালু রিটার্ন করা</h5>
+<pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
+    <code class="text-white">function getNames() {
+
+        let firstName = 'John',
+            lastName = 'Doe';
+    
+            <span class="text-secondary ">// return as an objecty</span>
+        return {
+            firstName,
+            lastName
+        };
+    }
+    
+let names = getNames();
+console.log(names);
+console.log(names.firstName);
+console.log(names.lastName);
+
+<span class="text-secondary ">{
+    firstName:"John",
+    lastName:"Doe"
+}
+John
+Doe</span></code></pre>
+
+অবজেক্ট এর নিয়ম মেনে {} এটির মধ্যে expressions দিতে হবে। 
+        </p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
