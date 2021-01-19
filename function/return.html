@@ -81,12 +81,12 @@ test();
 <span class="text-secondary ">// true </span>
 </code></pre>
 <h4>ফাংশন কখন undefined রিটার্ন করবে?</h4>
-By default জাভাস্ক্রিপ্টে ফাংশন এর ভ্যালু undefined সেট করা থাকে। যদি ফাংশন এর মধ্যে কিছু না থাকে তাহলে undefined আসবে। নিচের উদাহরনটি খেয়াল করি। 
+যদি ফাংশন এর মধ্যে কিছু না থাকে এবং ফাংশনকে যদি console.log() করা হয়  তাহলে undefined আসবে। নিচের উদাহরনটি খেয়াল করি। 
 <pre class="d-inline-flex bg-dark container-fluid  border border-rounded d-inline-block fs-5 mt-3 mb-3">
 <code class="text-white">function test(){
 
 };
-test(); 
+console.log(test()); 
 <span class="text-secondary ">// undefined</span>
 </code></pre>
 <h4>return এর ভ্যালু কখন undefined আসবে?</h4>
